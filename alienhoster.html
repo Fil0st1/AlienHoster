@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="AlienHoster — Premium Discord bot hosting powered by next-generation infrastructure. Deploy your bot in seconds with 99.99% uptime. Host Beyond Earth.">
+  <title>AlienHoster | Host Beyond Earth</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+    rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <!-- Scroll Progress -->
+  <div id="scroll-progress"></div>
+
+  <!-- Loading Screen -->
+  <div id="loader">
+    <div class="loader-ring"></div>
+    <span class="loader-text">Initializing Systems</span>
+  </div>
+
+  <!-- Background -->
+  <canvas id="star-canvas"></canvas>
+  <div class="nebula nebula--violet"></div>
+  <div class="nebula nebula--blue"></div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       NAVIGATION
+  ════════════════════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="logo.png" alt="AlienHoster" class="logo-img">
+        <span class="logo-text">AlienHoster</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="#plans">Plans</a>
+        <a href="#why-us">Why Us</a>
+        <a href="#testimonials">Reviews</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://discord.gg/7yYzqXC5gs" class="btn btn-outline" target="_blank" rel="noopener">
+          <i class="fa-brands fa-discord"></i> Discord
+        </a>
+        <a href="#plans" class="btn btn-primary">View Plans</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Drawer -->
+  <div class="mobile-overlay" id="mobile-overlay"></div>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#features">Features</a>
+    <a href="#plans">Plans</a>
+    <a href="#why-us">Why Us</a>
+    <a href="#testimonials">Reviews</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://discord.gg/7yYzqXC5gs" target="_blank" rel="noopener">
+      <i class="fa-brands fa-discord"></i> Join Discord
+    </a>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════
+       1. HERO
+  ════════════════════════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge reveal">
+          <span class="pulse-dot"></span> Next-Gen Infrastructure Online
+        </div>
+        <h1 class="hero-title reveal reveal-delay-1">Host Beyond Earth.</h1>
+        <p class="hero-subtitle reveal reveal-delay-2">
+          Premium Discord bot hosting powered by next-generation infrastructure. Deploy your bot in seconds with 99.99%
+          uptime.
+        </p>
+        <div class="hero-buttons reveal reveal-delay-3">
+          <a href="#plans" class="btn btn-primary"><i class="fa-solid fa-rocket"></i> View Plans</a>
+          <a href="https://discord.gg/7yYzqXC5gs" class="btn btn-outline" target="_blank" rel="noopener">
+            <i class="fa-brands fa-discord"></i> Join Discord
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal reveal-delay-2">
+        <div class="hologram-wrapper">
+          <div class="holo-hexgrid"></div>
+          <!-- Server Core -->
+          <div class="holo-core">
+            <div class="rack-line"></div>
+            <div class="rack-line"></div>
+            <div class="rack-line"></div>
+            <div class="rack-line"></div>
+            <div class="rack-line"></div>
+            <span class="rack-led led-1"></span>
+            <span class="rack-led led-2"></span>
+            <span class="rack-led led-3"></span>
+          </div>
+          <!-- Orbit Rings -->
+          <div class="orbit-ring orbit-ring-1">
+            <div class="orbit-node orbit-node-1"></div>
+          </div>
+          <div class="orbit-ring orbit-ring-2">
+            <div class="orbit-node orbit-node-2"></div>
+          </div>
+          <div class="orbit-ring orbit-ring-3">
+            <div class="orbit-node orbit-node-3"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       2. FEATURES
+  ════════════════════════════════════════════════════════ -->
+  <section id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge reveal">Core Technology</span>
+        <h2 class="section-title reveal reveal-delay-1"><span class="gradient-text">Built for the Future</span></h2>
+        <p class="section-subtitle reveal reveal-delay-2">Enterprise-grade infrastructure purpose-built for running
+          Discord bots with unmatched performance and reliability.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="feature-icon"><i class="fa-solid fa-microchip"></i></div>
+          <h3 class="feature-name">NVMe SSD Storage</h3>
+          <p class="feature-desc">Enterprise NVMe arrays deliver warp-speed read and write performance. Your bot's
+            database and files load without a single bottleneck.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h3 class="feature-name">DDoS Protection</h3>
+          <p class="feature-desc">Always-on mitigation with up to 17 Tbps filtering capacity. Your bot stays online and
+            responsive even under heavy attack.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-3">
+          <div class="feature-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+          <h3 class="feature-name">Instant Setup</h3>
+          <p class="feature-desc">Automated provisioning gets your bot online in under 30 seconds. Pick your plan,
+            upload your bot, and you are live — zero manual steps.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-4">
+          <div class="feature-icon"><i class="fa-solid fa-headset"></i></div>
+          <h3 class="feature-name">24/7 Support</h3>
+          <p class="feature-desc">Our expert crew is always on standby in Discord. Get real-time help with your bot
+            setup day or night — average response time under 5 minutes.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-5">
+          <div class="feature-icon"><i class="fa-solid fa-signal"></i></div>
+          <h3 class="feature-name">99.99% Uptime</h3>
+          <p class="feature-desc">Your bot stays online around the clock. Redundant power, networking and automatic
+            restarts ensure your bot never misses a command.</p>
+        </div>
+        <div class="feature-card reveal reveal-delay-6">
+          <div class="feature-icon"><i class="fa-solid fa-rotate"></i></div>
+          <h3 class="feature-name">Auto Restarts</h3>
+          <p class="feature-desc">If your bot crashes, our watchdog system detects it instantly and restarts it
+            automatically — keeping your community running without interruption.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       3. HOSTING PLANS
+  ════════════════════════════════════════════════════════ -->
+  <section id="plans">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge reveal">Pricing</span>
+        <h2 class="section-title reveal reveal-delay-1"><span class="gradient-text">Bot Hosting Plans</span></h2>
+        <p class="section-subtitle reveal reveal-delay-2">Choose the perfect plan for your Discord bot. Transparent
+          pricing, zero hidden fees.</p>
+      </div>
+
+
+      <!-- Bot Hosting Plans -->
+      <div class="pricing-panel active" id="panel-bots">
+        <div class="plan-card reveal reveal-delay-1">
+          <h3 class="plan-name">Starter</h3>
+          <div class="plan-price"><span class="currency">₹</span>99</div>
+          <p class="plan-period">per month</p>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> 1 vCore CPU</li>
+            <li><i class="fa-solid fa-check"></i> 256 MB DDR4 RAM</li>
+            <li><i class="fa-solid fa-check"></i> 3 GB NVMe Storage</li>
+            <li><i class="fa-solid fa-check"></i> Best for small utility bots</li>
+            <li><i class="fa-solid fa-check"></i> Auto Restart</li>
+            <li><i class="fa-solid fa-check"></i> Standard Support</li>
+          </ul>
+          <a href="https://discord.gg/7yYzqXC5gs" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="fa-brands fa-discord"></i> Purchase via Discord
+          </a>
+        </div>
+
+        <div class="plan-card featured reveal reveal-delay-2">
+          <span class="plan-badge">Most Popular</span>
+          <h3 class="plan-name">Explorer</h3>
+          <div class="plan-price"><span class="currency">₹</span>249</div>
+          <p class="plan-period">per month</p>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> 2 vCore CPU</li>
+            <li><i class="fa-solid fa-check"></i> 2 GB DDR4 RAM</li>
+            <li><i class="fa-solid fa-check"></i> 10 GB NVMe Storage</li>
+            <li><i class="fa-solid fa-check"></i> Best for growing communities</li>
+            <li><i class="fa-solid fa-check"></i> Auto Restart</li>
+            <li><i class="fa-solid fa-check"></i> Premium Support</li>
+          </ul>
+          <a href="https://discord.gg/7yYzqXC5gs" target="_blank" rel="noopener" class="btn btn-primary">
+            <i class="fa-brands fa-discord"></i> Purchase via Discord
+          </a>
+        </div>
+
+        <div class="plan-card reveal reveal-delay-3">
+          <h3 class="plan-name">Galaxy</h3>
+          <div class="plan-price"><span class="currency">₹</span>499</div>
+          <p class="plan-period">per month</p>
+          <div class="plan-divider"></div>
+          <ul class="plan-features">
+            <li><i class="fa-solid fa-check"></i> 4 vCore CPU</li>
+            <li><i class="fa-solid fa-check"></i> 6 GB DDR4 RAM</li>
+            <li><i class="fa-solid fa-check"></i> 25 GB NVMe Storage</li>
+            <li><i class="fa-solid fa-check"></i> Best for large production bots</li>
+            <li><i class="fa-solid fa-check"></i> Auto Restart</li>
+            <li><i class="fa-solid fa-check"></i> Priority Support</li>
+          </ul>
+          <a href="https://discord.gg/7yYzqXC5gs" target="_blank" rel="noopener" class="btn btn-outline">
+            <i class="fa-brands fa-discord"></i> Purchase via Discord
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       4. WHY CHOOSE ALIENHOSTER
+  ════════════════════════════════════════════════════════ -->
+  <section class="stats-section" id="why-us">
+    <div class="container">
+      <div class="stats-grid reveal">
+        <div class="stat-card">
+          <div class="stat-value"><span data-count="99.9" data-suffix="%">0</span></div>
+          <div class="stat-label">Uptime Guarantee</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value"><span data-count="30" data-suffix="s" data-prefix="<">0</span></div>
+          <div class="stat-label">Instant Deployments</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value"><span data-count="15" data-suffix="ms" data-prefix="<">0</span></div>
+          <div class="stat-label">Ultra Low Latency</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-value"><span data-count="100" data-suffix="%">0</span></div>
+          <div class="stat-label">Premium Hardware</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       5. TESTIMONIALS
+  ════════════════════════════════════════════════════════ -->
+  <!--
+  <section id="testimonials">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge reveal">Testimonials</span>
+        <h2 class="section-title reveal reveal-delay-1"><span class="gradient-text">Transmission Logs</span></h2>
+        <p class="section-subtitle reveal reveal-delay-2">Hear from bot developers who trust AlienHoster with their
+          infrastructure.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card reveal reveal-delay-1">
+          <i class="fa-solid fa-quote-left quote-mark"></i>
+          <p class="testimonial-text">
+            "Moved my moderation bot to AlienHoster and it's been running flawlessly for 6 months straight. Zero
+            downtime, auto restarts work perfectly, and the response time is insanely fast."
+          </p>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">JD</div>
+            <div>
+              <div class="author-name">James D.</div>
+              <div class="author-role">Bot Developer &bull; 50+ Servers</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <i class="fa-solid fa-quote-left quote-mark"></i>
+          <p class="testimonial-text">
+            "Their Discord support is unreal. I had a database issue with my music bot, opened a ticket, and their tech
+            team resolved it in under 5 minutes — at 2 AM on a Sunday."
+          </p>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">ST</div>
+            <div>
+              <div class="author-name">Sarah T.</div>
+              <div class="author-role">Bot Developer &bull; Music Bot</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-3">
+          <i class="fa-solid fa-quote-left quote-mark"></i>
+          <p class="testimonial-text">
+            "Best value for money, hands down. We run 8 Discord bots across multiple servers on their Galaxy plan.
+            Everything handles thousands of commands per hour without breaking a sweat."
+          </p>
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+              class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <div class="testimonial-author">
+            <div class="author-avatar">MK</div>
+            <div>
+              <div class="author-name">Mark K.</div>
+              <div class="author-role">Bot Developer &bull; Utility Bots</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- ═══════════════════════════════════════════════════════
+       6. FAQ
+  ════════════════════════════════════════════════════════ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge reveal">Support</span>
+        <h2 class="section-title reveal reveal-delay-1"><span class="gradient-text">Knowledge Base</span></h2>
+        <p class="section-subtitle reveal reveal-delay-2">Answers to the most common questions about our services.</p>
+      </div>
+
+      <div class="faq-list reveal">
+        <div class="faq-item">
+          <button class="faq-trigger">
+            How do I purchase?
+            <span class="faq-trigger-icon"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              All purchases are handled securely through our Discord server for direct, personalized communication.
+              Click any "Purchase via Discord" button, join the server, and open a sales ticket. Our automated billing
+              bot will walk you through payment — the entire process takes under two minutes.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            What bot frameworks are supported?
+            <span class="faq-trigger-icon"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              We support any Discord bot framework — discord.js, discord.py, JDA, Eris, Serenity, and more. Whether your
+              bot is built with Node.js, Python, Java, or Rust, our servers run it flawlessly. Just upload your files
+              and we handle the rest.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            How fast is setup?
+            <span class="faq-trigger-icon"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              Once payment is confirmed, our automated provisioning systems kick in immediately. Your bot hosting
+              instance is typically online and ready within 30 seconds. Upload your bot files, configure your token, and
+              you are live.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Do you provide support?
+            <span class="faq-trigger-icon"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              Absolutely. We offer 24/7 technical support via our Discord ticket system. Whether it's a billing
+              question, help configuring your bot, or troubleshooting crashes, our experienced team is ready to help.
+              Our average response time is under 5 minutes.
+            </div>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger">
+            Can I upgrade later?
+            <span class="faq-trigger-icon"><i class="fa-solid fa-chevron-down"></i></span>
+          </button>
+          <div class="faq-body">
+            <div class="faq-body-inner">
+              Yes — seamlessly. As your bot grows to more servers and handles more commands, you can upgrade your plan
+              at any time without data loss or downtime. Simply open an upgrade ticket in Discord and we will adjust
+              your resources instantly.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       7. FINAL CTA
+  ════════════════════════════════════════════════════════ -->
+  <section class="cta-section">
+    <div class="cta-glow-1"></div>
+    <div class="cta-glow-2"></div>
+    <div class="container">
+      <div class="cta-content reveal">
+        <h2 class="cta-title">Ready To Launch?</h2>
+        <p class="section-subtitle" style="margin-bottom: 36px;">Join our Discord and deploy your bot today.</p>
+        <a href="https://discord.gg/7yYzqXC5gs" class="btn btn-glow" target="_blank" rel="noopener">
+          <i class="fa-brands fa-discord"></i> Join Discord Now
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       8. FOOTER
+  ════════════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo">
+            <img src="logo.png" alt="AlienHoster" class="logo-img">
+            <span class="logo-text">AlienHoster</span>
+          </a>
+          <p>Premium Discord bot hosting delivering unparalleled uptime, speed and reliability. Trusted by bot
+            developers worldwide.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Services</h4>
+          <ul class="footer-links">
+            <li><a href="#plans">Bot Hosting</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#why-us">Infrastructure</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#">About Us</a></li>
+            <li><a href="#why-us">Infrastructure</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Connect</h4>
+          <ul class="footer-links">
+            <li><a href="https://discord.gg/7yYzqXC5gs" target="_blank" rel="noopener">Discord Community</a></li>
+            <li><a href="#faq">Knowledge Base</a></li>
+            <li><a href="#">System Status</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 AlienHoster. All rights reserved.</div>
+        <div class="social-icons">
+          <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+          <a href="https://discord.gg/7yYzqXC5gs" class="social-icon" aria-label="Discord" target="_blank"
+            rel="noopener"><i class="fa-brands fa-discord"></i></a>
+          <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
