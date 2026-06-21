@@ -24,8 +24,16 @@
 
 <body>
 
-  <!-- Scroll Progress -->
-  <div id="scroll-progress"></div>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" id="announcement-bar">
+    <div class="announcement-inner">
+      <span class="announcement-dot"></span>
+      <span class="announcement-text">All Systems Operational &mdash; 99.99% uptime this month</span>
+    </div>
+    <button class="announcement-close" id="announcement-close" aria-label="Dismiss announcement">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+  </div>
 
   <!-- Loading Screen -->
   <div id="loader">
@@ -131,7 +139,46 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════
-       2. FEATURES
+       2. HOW IT WORKS
+  ════════════════════════════════════════════════════════ -->
+  <section id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge reveal">Simple Process</span>
+        <h2 class="section-title reveal reveal-delay-1"><span class="gradient-text">Up and Running in 3 Steps</span></h2>
+        <p class="section-subtitle reveal reveal-delay-2">No complicated setup. No DevOps knowledge required. Just Discord.</p>
+      </div>
+      <div class="steps-wrapper">
+        <div class="step-card reveal reveal-delay-1">
+          <span class="step-number">01</span>
+          <div class="step-icon"><i class="fa-brands fa-discord"></i></div>
+          <h3 class="step-title">Join Discord</h3>
+          <p class="step-desc">Join our community server and browse available plans. Our team is online 24/7 to answer any questions before you commit.</p>
+        </div>
+        <div class="step-connector reveal reveal-delay-2">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="step-card reveal reveal-delay-3">
+          <span class="step-number">02</span>
+          <div class="step-icon"><i class="fa-solid fa-ticket"></i></div>
+          <h3 class="step-title">Open a Ticket</h3>
+          <p class="step-desc">Open a purchase ticket, choose your plan, and complete payment through our secure billing bot. The whole process takes under two minutes.</p>
+        </div>
+        <div class="step-connector reveal reveal-delay-4">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+        <div class="step-card reveal reveal-delay-5">
+          <span class="step-number">03</span>
+          <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
+          <h3 class="step-title">Go Live</h3>
+          <p class="step-desc">Our systems provision your bot instance automatically. Upload your files, set your token, and your bot is live within 30 seconds.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════
+       3. FEATURES
   ════════════════════════════════════════════════════════ -->
   <section id="features">
     <div class="container">
@@ -192,6 +239,18 @@
         <h2 class="section-title reveal reveal-delay-1"><span class="gradient-text">Bot Hosting Plans</span></h2>
         <p class="section-subtitle reveal reveal-delay-2">Choose the perfect plan for your Discord bot. Transparent
           pricing, zero hidden fees.</p>
+        <div class="currency-switcher reveal reveal-delay-3" id="currency-switcher">
+          <button class="currency-btn" id="currency-btn" aria-label="Select currency">
+            <span class="currency-flag">🇮🇳</span>
+            <span class="currency-label">INR</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <ul class="currency-dropdown" id="currency-dropdown">
+            <li class="active" data-currency="inr"><span>🇮🇳</span> INR &mdash; Indian Rupee</li>
+            <li data-currency="eur"><span>🇪🇺</span> EUR &mdash; Euro</li>
+            <li data-currency="usd"><span>🇺🇸</span> USD &mdash; US Dollar</li>
+          </ul>
+        </div>
       </div>
 
 
@@ -199,7 +258,7 @@
       <div class="pricing-panel active" id="panel-bots">
         <div class="plan-card reveal reveal-delay-1">
           <h3 class="plan-name">Starter</h3>
-          <div class="plan-price"><span class="currency">₹</span>99</div>
+          <div class="plan-price" data-inr="99" data-eur="1.99" data-usd="1.99"><span class="currency">₹</span><span class="price-val">99</span></div>
           <p class="plan-period">per month</p>
           <div class="plan-divider"></div>
           <ul class="plan-features">
@@ -218,7 +277,7 @@
         <div class="plan-card featured reveal reveal-delay-2">
           <span class="plan-badge">Most Popular</span>
           <h3 class="plan-name">Explorer</h3>
-          <div class="plan-price"><span class="currency">₹</span>249</div>
+          <div class="plan-price" data-inr="249" data-eur="3.99" data-usd="3.99"><span class="currency">₹</span><span class="price-val">249</span></div>
           <p class="plan-period">per month</p>
           <div class="plan-divider"></div>
           <ul class="plan-features">
@@ -236,7 +295,7 @@
 
         <div class="plan-card reveal reveal-delay-3">
           <h3 class="plan-name">Galaxy</h3>
-          <div class="plan-price"><span class="currency">₹</span>499</div>
+          <div class="plan-price" data-inr="499" data-eur="7.99" data-usd="7.99"><span class="currency">₹</span><span class="price-val">499</span></div>
           <p class="plan-period">per month</p>
           <div class="plan-divider"></div>
           <ul class="plan-features">

@@ -6,6 +6,21 @@
 (function () {
   'use strict';
 
+  // ── Announcement Bar ────────────────────────────────────
+  const annBar = document.getElementById('announcement-bar');
+  const annClose = document.getElementById('announcement-close');
+
+  if (localStorage.getItem('ah_bar_dismissed')) {
+    annBar.classList.add('hidden');
+    document.body.classList.add('bar-dismissed');
+  }
+
+  annClose.addEventListener('click', () => {
+    annBar.classList.add('hidden');
+    document.body.classList.add('bar-dismissed');
+    localStorage.setItem('ah_bar_dismissed', '1');
+  });
+
   // ── Loading Screen ──────────────────────────────────────
   window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
@@ -99,16 +114,6 @@
   }
   drawStars();
 
-  // ── Scroll Progress Bar ─────────────────────────────────
-  const progressBar = document.getElementById('scroll-progress');
-  function updateProgress() {
-    const scrollTop = document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    const pct = (scrollTop / scrollHeight) * 100;
-    progressBar.style.width = pct + '%';
-  }
-  window.addEventListener('scroll', updateProgress, { passive: true });
-
   // ── Navbar scroll class ─────────────────────────────────
   const navbar = document.getElementById('navbar');
   function updateNavbar() {
@@ -201,6 +206,22 @@
     });
   });
 
+  // ── Active Nav Link on Scroll ───────────────────────────
+  const navSections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('.nav-links a');
+
+  const activeSectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navAnchors.forEach(a => a.classList.remove('active'));
+        const match = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (match) match.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -75% 0px' });
+
+  navSections.forEach(sec => activeSectionObserver.observe(sec));
+
   // ── FAQ Accordion ───────────────────────────────────────
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
@@ -222,6 +243,56 @@
         item.classList.add('active');
         body.style.maxHeight = inner.scrollHeight + 24 + 'px';
       }
+    });
+  });
+
+  // ── Currency Switcher ───────────────────────────────────
+  const currencySwitcher = document.getElementById('currency-switcher');
+  const currencyBtn = document.getElementById('currency-btn');
+  const currencyDropdown = document.getElementById('currency-dropdown');
+
+  const CURRENCIES = {
+    inr: { symbol: '₹', flag: '🇮🇳', label: 'INR', decimals: 0 },
+    eur: { symbol: '€', flag: '🇪🇺', label: 'EUR', decimals: 2 },
+    usd: { symbol: '$', flag: '🇺🇸', label: 'USD', decimals: 2 },
+  };
+
+  let activeCurrency = 'inr';
+
+  function updatePrices() {
+    const c = CURRENCIES[activeCurrency];
+    document.querySelectorAll('.plan-price[data-inr]').forEach(el => {
+      const raw = el.getAttribute('data-' + activeCurrency);
+      el.querySelector('.currency').textContent = c.symbol;
+      el.querySelector('.price-val').textContent =
+        c.decimals > 0 ? parseFloat(raw).toFixed(c.decimals) : raw;
+    });
+  }
+
+  function updateBtn() {
+    const c = CURRENCIES[activeCurrency];
+    currencyBtn.querySelector('.currency-flag').textContent = c.flag;
+    currencyBtn.querySelector('.currency-label').textContent = c.label;
+  }
+
+  currencyBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currencySwitcher.classList.toggle('open');
+  });
+
+  document.addEventListener('click', () => {
+    currencySwitcher.classList.remove('open');
+  });
+
+  currencyDropdown.querySelectorAll('li').forEach(item => {
+    item.addEventListener('click', (e) => {
+      e.stopPropagation();
+      activeCurrency = item.getAttribute('data-currency');
+      currencyDropdown.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+      item.classList.add('active');
+      updatePrices();
+      updateBtn();
+      currencySwitcher.classList.remove('open');
     });
   });
 
